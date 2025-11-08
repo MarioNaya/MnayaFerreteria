@@ -39,11 +39,32 @@
             android:layout_height="63dp"
             android:layout_marginLeft="52dp"
             android:layout_marginTop="60dp"
-            android:backgroundTint="@android:color/white"
+            android:background="@drawable/edittext_redondeado"
             android:ems="10"
             android:hint="@string/usuario"
             android:inputType="text"
             android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword2"
+            android:layout_width="306dp"
+            android:layout_height="63dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/edittext_redondeado"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="306dp"
+            android:layout_height="68dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginTop="65dp"
+            android:backgroundTint="#165873"
+            android:text="Button" />
 
     </LinearLayout>
 
