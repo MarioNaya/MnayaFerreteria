@@ -15,10 +15,10 @@ public class Avisos {
         return aviso;
     }
 
-    public static AlertDialog.Builder datosAcceso(Context context){
+    public static AlertDialog.Builder avisoSinBotones(Context context, String titulo, String mensaje){
         AlertDialog.Builder aviso = new AlertDialog.Builder(context);
-        aviso.setTitle(R.string.datos_acceso_title);
-        aviso.setMessage(R.string.datos_acceso_mensaje);
+        aviso.setTitle(titulo);
+        aviso.setMessage(mensaje);
         aviso.setCancelable(true);
         return aviso;
     }

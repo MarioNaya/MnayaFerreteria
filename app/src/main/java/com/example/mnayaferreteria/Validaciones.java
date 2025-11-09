@@ -14,12 +14,12 @@ public class Validaciones {
         for (int i = 0;i<layout.getChildCount();i++){
             View campo = layout.getChildAt(i);
             if (campo instanceof EditText && ((EditText) campo).getText().toString().trim().isEmpty()){
-                Avisos.campoObligatorio(campo,context);
+                Avisos.campoObligatorio(campo,context).show();
                 return false;
             }
 
             if (campo instanceof Spinner && ((Spinner) campo).getSelectedItemPosition()==0){
-                Avisos.campoObligatorio(campo,context);
+                Avisos.campoObligatorio(campo,context).show();
                 return false;
             }
         }

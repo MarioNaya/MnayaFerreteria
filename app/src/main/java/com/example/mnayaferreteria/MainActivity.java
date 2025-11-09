@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (!Validaciones.comruebaCamposVacios(layout,MainActivity.this)){
-                    Avisos.campoObligatorio(user,MainActivity.this).show();
                     return;
                 }
 
@@ -56,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
                     Intent i = new Intent(MainActivity.this, Principal.class);
                     startActivity(i);
                 } else {
-                    Avisos.datosAcceso(MainActivity.this).show();
+                    String titulo = getString(R.string.datos_acceso_title);
+                    String mensaje = getString(R.string.datos_acceso_mensaje);
+                    Avisos.avisoSinBotones(MainActivity.this,titulo,mensaje).show();
                     Utilidades.limpiaCampos(layout);
                 }
             }
