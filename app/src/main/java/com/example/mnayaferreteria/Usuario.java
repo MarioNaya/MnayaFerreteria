@@ -2,20 +2,55 @@ package com.example.mnayaferreteria;
 
 public class Usuario {
 
-    private String user, pass, tipo;
+    private String usuario, nombre, apellidos;
+    private int edad;
+    private String pass, tipo;
 
-    public Usuario(String user, String pass, String tipo) {
-        this.user = user;
+    public Usuario(String usuario, String nombre, String apellidos, int edad, String pass, String tipo) {
+        this.usuario = usuario;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.edad = edad;
         this.pass = pass;
         this.tipo = tipo;
     }
 
-    public String getUser() {
-        return user;
+    public Usuario(String nombre, String apellidos, String tipo) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.tipo = tipo;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
     public String getPass() {

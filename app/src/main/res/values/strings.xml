@@ -3,4 +3,13 @@
     <string name="usuario">Usuario</string>
     <string name="password">Contraseña</string>
     <string name="acceder">Acceder</string>
+    <string name="articulos">Artículos</string>
+    <string name="cuenta">Administrar cuenta</string>
+    <string name="herramientas">Herramientas</string>
+    <string name="jardin">Jardín</string>
+    <string name="menaje">Menaje</string>
+    <string name="iluminacion">Iluminación</string>
+    <string name="datos_acceso_title">Datos de acceso</string>
+    <string name="datos_acceso_mensaje">Usuario o contraseña incorrectos</string>
+    <string name="campo_obligatorio_title">Campo obligatorio</string>
 </resources>

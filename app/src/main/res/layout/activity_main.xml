@@ -5,20 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondopantalla"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fondopantalla" />
-
     <LinearLayout
+        android:id="@+id/layoutLogin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -43,10 +34,13 @@
             android:ems="10"
             android:hint="@string/usuario"
             android:inputType="text"
-            android:textAlignment="center" />
+            android:tag="@string/usuario"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textColorHint="#949191" />
 
         <EditText
-            android:id="@+id/editTextTextPassword2"
+            android:id="@+id/campoPass"
             android:layout_width="306dp"
             android:layout_height="63dp"
             android:layout_marginLeft="52dp"
@@ -55,16 +49,21 @@
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:textAlignment="center" />
+            android:tag="@string/password"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textColorHint="#949191" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnAcceder"
             android:layout_width="306dp"
             android:layout_height="68dp"
             android:layout_marginLeft="52dp"
             android:layout_marginTop="65dp"
             android:backgroundTint="#165873"
-            android:text="Button" />
+            android:text="@string/acceder"
+            android:textColor="#F8F4F4"
+            android:textColorLink="#F8F4F4" />
 
     </LinearLayout>
 

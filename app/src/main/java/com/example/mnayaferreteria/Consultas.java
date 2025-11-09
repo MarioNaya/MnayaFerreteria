@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 
 public class Consultas extends DbHelper{
 
@@ -17,29 +18,32 @@ public class Consultas extends DbHelper{
     }
 
     /**
-     * Solicita usuario y contraseña para devolver string con el nivel de acceso del usuario.
+     * Solicita usuario y contraseña para devolver objeto usuario con el nombre, apellidos y nivel de acceso del usuario.
      * @param user string con usuario
      * @param pass string con contraseña
      * @param activity requiere contexto para ejecutar el toast
-     * @return string con nivel de acceso si el usuario y pass correctos//string null si el logado es incorrecto
+     * @return usuario con nivel de acceso si el usuario y pass correctos//objeto null si el logado es incorrecto
      */
-    public String solicitarTipoUsuario(String user, String pass, Context activity){
+    public Usuario solicitarAccesoConTipo(String user, String pass, Context activity){
 
-        String nivelAcceso = null;
+        Usuario nivelAcceso = null;
 
         try (SQLiteDatabase db = getReadableDatabase()) {
 
-            Cursor cursor = db.rawQuery("SELECT tipo FROM " + TABLA_USUARIOS + " WHERE usuario = ? AND pass = ?;", new String[]{user,pass});
+            Cursor cursor = db.rawQuery("SELECT nombre, apellidos, tipo FROM " + TABLA_USUARIOS + " WHERE usuario = ? AND pass = ?;", new String[]{user,pass});
 
             if (cursor.moveToFirst()) {
-                nivelAcceso = cursor.getString(0);
+                nivelAcceso = new Usuario(
+                        cursor.getString(0),
+                        cursor.getString(1),
+                        cursor.getString(2)
+                );
             }
 
             cursor.close();
             return nivelAcceso;
 
         } catch (Exception e) {
-            Toast.makeText(activity,"Datos incorrectos",Toast.LENGTH_LONG).show();
             return nivelAcceso;
         }
 
