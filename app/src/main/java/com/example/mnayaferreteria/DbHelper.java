@@ -11,7 +11,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     Context context;
 
-    public static final int VERSION_DB = 3;
+    public static final int VERSION_DB = 4;
     public static final String NOMBRE_DB = "ferreteria.db";
     public static final String TABLA_USUARIOS = "usuarios";
     public static final String TABLA_ARTICULOS = "articulos";
@@ -21,7 +21,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     String crea_tabla_usuarios = "CREATE TABLE " + TABLA_USUARIOS +
-            "(usuario TEXT PRIMARY KEY, " +
+            " (usuario TEXT PRIMARY KEY, " +
             "nombre TEXT NOT NULL, " +
             "apellidos TEXT NOT NULL, " +
             "edad INTEGER NOT NULL, " +
@@ -29,13 +29,14 @@ public class DbHelper extends SQLiteOpenHelper {
             "tipo TEXT NOT NULL);";
 
     String crea_tabla_articulos = "CREATE TABLE " + TABLA_ARTICULOS +
-            "(idArticulo INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            " (idArticulo INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "nombre TEXT NOT NULL, " +
             "categoria TEXT NOT NULL, " +
             "descripcion TEXT NOT NULL, " +
             "precio NUMERIC NOT NULL, " +
             "stock INTEGER NOT NULL, " +
-            "origen TEXT NOT NULL);";
+            "origen TEXT NOT NULL, " +
+            "fechaRegistro TEXT NOT NULL);";
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -47,7 +48,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        db.execSQL("DROP TABLE " + "ususarios");
+        db.execSQL("DROP TABLE " + TABLA_USUARIOS);
         db.execSQL("DROP TABLE " + TABLA_ARTICULOS);
         onCreate(db);
     }

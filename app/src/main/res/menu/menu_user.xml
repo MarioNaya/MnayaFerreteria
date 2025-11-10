@@ -8,6 +8,9 @@
 
         <menu>
             <item
+                android:id="@+id/todos"
+                android:title="@string/todos" />
+            <item
                 android:id="@+id/subitemHerramientas"
                 android:title="@string/herramientas" />
             <item
@@ -26,5 +29,8 @@
     <item
         android:id="@+id/itemCuenta"
         android:title="@string/cuenta" />
+    <item
+        android:id="@+id/itemCerrarSesion"
+        android:title="@string/cerrar_sesion" />
 
 </menu>
