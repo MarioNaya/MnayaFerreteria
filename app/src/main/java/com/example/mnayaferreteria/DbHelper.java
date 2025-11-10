@@ -11,7 +11,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     Context context;
 
-    public static final int VERSION_DB = 3;
+    public static final int VERSION_DB = 1;
     public static final String NOMBRE_DB = "ferreteria.db";
     public static final String TABLA_USUARIOS = "usuarios";
     public static final String TABLA_ARTICULOS = "articulos";

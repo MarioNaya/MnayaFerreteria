@@ -15,4 +15,6 @@
     <string name="datos_acceso_mensaje">Usuario o contraseña incorrectos</string>
     <string name="campo_obligatorio_title">Campo obligatorio</string>
     <string name="ultimos_registrados">Últimos productos registrados</string>
+    <string name="error_logado_title">Error en el logado</string>
+    <string name="error_logado_mensaje">No se ha recibido información de los permisos de la cuenta</string>
 </resources>

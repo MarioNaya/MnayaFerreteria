@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     bundle.putString("apellidos",usuario.getApellidos());
                     bundle.putString("tipo",usuario.getTipo());
                     Intent i = new Intent(MainActivity.this, Principal.class);
+                    i.putExtras(bundle);
                     startActivity(i);
                 } else {
                     String titulo = getString(R.string.datos_acceso_title);
