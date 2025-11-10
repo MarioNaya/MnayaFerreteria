@@ -14,18 +14,28 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbarPrincipal"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
             android:background="#165873"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme" />
 
+        <TextView
+            android:id="@+id/textSaludo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textAlignment="center"
+            android:textColor="#C9F2F2"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="665dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
             android:orientation="vertical">
 
@@ -42,6 +52,7 @@
                 android:textStyle="bold" />
 
             <ListView
+                android:id="@+id/listaPrincipal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"

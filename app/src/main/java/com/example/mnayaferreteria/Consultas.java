@@ -2,11 +2,14 @@ package com.example.mnayaferreteria;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+
+import java.util.ArrayList;
 
 public class Consultas extends DbHelper{
 
@@ -47,5 +50,30 @@ public class Consultas extends DbHelper{
             return nivelAcceso;
         }
 
+    }
+
+    public ArrayList<Articulo> ultimosArticulosRegistrados(){
+        ArrayList<Articulo> resultados = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT nombre, categoria, descripcion FROM " + TABLA_ARTICULOS + " ORDER BY idArticulo LIMIT 3", null);
+
+        try {
+            if (cursor.moveToFirst()) {
+                do {
+                    Articulo articulo = new Articulo(
+                            cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+                            cursor.getString(cursor.getColumnIndexOrThrow("categoria")),
+                            cursor.getString(cursor.getColumnIndexOrThrow("descripcion"))
+                    );
+                    resultados.add(articulo);
+                } while (cursor.moveToNext());
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            if (cursor != null) cursor.close();
+            db.close();
+        }
+        return resultados;
     }
 }
