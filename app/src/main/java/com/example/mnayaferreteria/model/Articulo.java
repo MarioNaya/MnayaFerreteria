@@ -9,19 +9,26 @@ public class Articulo {
     private int idArticulo;
 
 
-    public Articulo(String nombre, String categoria, String descripcion, double precio, int stock, String origen) {
+    public Articulo(String nombre, String categoria, String descripcion, double precio, int stock, String origen, int idArticulo) {
         this.nombre = nombre;
         this.categoria = categoria;
         this.descripcion = descripcion;
         this.precio = precio;
         this.stock = stock;
         Origen = origen;
+        this.idArticulo = idArticulo;
     }
 
     public Articulo(String nombre, String categoria, String descripcion) {
         this.nombre = nombre;
         this.categoria = categoria;
         this.descripcion = descripcion;
+    }
+
+    public Articulo(String nombre, double precio, int stock) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
     }
 
     public String getNombre() {

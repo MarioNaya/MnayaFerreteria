@@ -12,9 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MnayaFerreteria">
         <activity
-            android:name=".activities.Principal"
+            android:name=".activities.ArticuloDetalle"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ArticulosVista"
             android:exported="false"
-            android:parentActivityName=".activities.MainActivity"/>
+            android:parentActivityName=".activities.Principal" />
+        <activity
+            android:name=".activities.Principal"
+            android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
             android:exported="true">

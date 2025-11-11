@@ -12,6 +12,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.mnayaferreteria.adaptadores.AdapterUltimos;
 import com.example.mnayaferreteria.model.Articulo;
 import com.example.mnayaferreteria.infraestructura.BaseActivity;
 import com.example.mnayaferreteria.bbdd.Consultas;
@@ -22,7 +23,6 @@ import java.util.ArrayList;
 
 public class Principal extends BaseActivity {
 
-    SessionManager sessionManager;
     ArrayList<Articulo> listaArticulos;
     String nombre;
     String tipoUsuario;

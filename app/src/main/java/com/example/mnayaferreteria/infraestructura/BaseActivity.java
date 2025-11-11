@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mnayaferreteria.R;
+import com.example.mnayaferreteria.activities.ArticulosVista;
 import com.example.mnayaferreteria.user.SessionManager;
 import com.example.mnayaferreteria.activities.MainActivity;
 
@@ -21,37 +22,57 @@ public class BaseActivity extends AppCompatActivity {
         int idItem = item.getItemId();
 
         if (idItem == R.id.subitemHerramientas) {
-
+            Intent i = new Intent(this, ArticulosVista.class);
+            i.putExtra("categoria"," AND categoria='herramientas'");
+            startActivity(i);
             return true;
         } else if (idItem == R.id.subitemTodos) {
-
+            Intent i = new Intent(this, ArticulosVista.class);
+            i.putExtra("categoria","");
+            startActivity(i);
             return true;
         }  else if (idItem == R.id.subitemMenaje) {
-
+            Intent i = new Intent(this, ArticulosVista.class);
+            i.putExtra("categoria"," AND categoria='menaje'");
+            startActivity(i);
             return true;
         } else if (idItem == R.id.subitemIluminacion) {
-
+            Intent i = new Intent(this, ArticulosVista.class);
+            i.putExtra("categoria"," AND categoria='iluminación'");
+            startActivity(i);
             return true;
         } else if (idItem == R.id.subitemJardin) {
-
+            Intent i = new Intent(this, ArticulosVista.class);
+            i.putExtra("categoria"," AND categoria='jardín'");
+            startActivity(i);
             return true;
         } else if (idItem == R.id.itemCuenta) {
 
             return true;
         } else if (idItem == R.id.subitemTodosAdmin) {
-
+            Intent i = new Intent(this, ArticulosVista.class);
+            i.putExtra("categoria","");
+            startActivity(i);
             return true;
         } else if (idItem == R.id.subitemHerramientasAdmin) {
-
+            Intent i = new Intent(this, ArticulosVista.class);
+            i.putExtra("categoria"," AND categoria='herramientas'");
+            startActivity(i);
             return true;
         } else if (idItem == R.id.subitemMenajeAdmin) {
-
+            Intent i = new Intent(this, ArticulosVista.class);
+            i.putExtra("categoria"," AND categoria='menaje'");
+            startActivity(i);
             return true;
         } else if (idItem == R.id.subitemIluminacionAdmin) {
-
+            Intent i = new Intent(this, ArticulosVista.class);
+            i.putExtra("categoria"," AND categoria='iluminación'");
+            startActivity(i);
             return true;
         } else if (idItem == R.id.subitemJardinAdmin) {
-
+            Intent i = new Intent(this, ArticulosVista.class);
+            i.putExtra("categoria"," AND categoria='jardín'");
+            startActivity(i);
             return true;
         } else if (idItem == R.id.itemAdminRegistroArticulo) {
 

@@ -1,4 +1,4 @@
-package com.example.mnayaferreteria.activities;
+package com.example.mnayaferreteria.adaptadores;
 
 
 import android.content.Context;

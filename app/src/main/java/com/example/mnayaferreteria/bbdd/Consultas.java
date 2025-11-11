@@ -56,9 +56,8 @@ public class Consultas extends DbHelper {
     public ArrayList<Articulo> ultimosArticulosRegistrados(){
         ArrayList<Articulo> resultados = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT nombre, categoria, descripcion FROM " + TABLA_ARTICULOS + " ORDER BY idArticulo DESC LIMIT 3", null);
 
-        try {
+        try (db; Cursor cursor = db.rawQuery("SELECT nombre, categoria, descripcion FROM " + TABLA_ARTICULOS + " ORDER BY idArticulo DESC LIMIT 3", null)) {
             if (cursor.moveToFirst()) {
                 do {
                     Articulo articulo = new Articulo(
@@ -69,12 +68,53 @@ public class Consultas extends DbHelper {
                     resultados.add(articulo);
                 } while (cursor.moveToNext());
             }
-        } catch (SQLException e){
-            e.printStackTrace();
-        }finally {
-            if (cursor != null) cursor.close();
-            db.close();
+        } catch (SQLException e) {
+            throw new RuntimeException();
         }
         return resultados;
+    }
+
+    public ArrayList<Articulo> listadoArticulos(String categoria){
+        ArrayList<Articulo> resultados = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+
+        try (db; Cursor cursor = db.rawQuery("SELECT nombre, precio, stock FROM " + TABLA_ARTICULOS + " WHERE 1" + categoria, null)) {
+            if (cursor.moveToFirst()) {
+                do {
+                    Articulo articulo = new Articulo(
+                            cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+                            cursor.getDouble(cursor.getColumnIndexOrThrow("precio")),
+                            cursor.getInt(cursor.getColumnIndexOrThrow("stock"))
+                    );
+                    resultados.add(articulo);
+                } while (cursor.moveToNext());
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException();
+        } finally {
+
+        }
+        return resultados;
+    }
+
+    public Articulo articuloPorNombre(String nombre){
+
+        Articulo articulo = null;
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLA_ARTICULOS + " WHERE nombre = ?", new String[]{nombre});
+        if (cursor.moveToFirst()){
+            articulo = new Articulo(cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("categoria")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
+                    cursor.getDouble(cursor.getColumnIndexOrThrow("precio")),
+                    cursor.getInt(cursor.getColumnIndexOrThrow("stock")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("origen")),
+                    cursor.getInt(cursor.getColumnIndexOrThrow("idArticulo"))
+            );
+        }
+        cursor.close();
+        db.close();
+        return articulo;
     }
 }

@@ -32,4 +32,14 @@
     <string name="descripcion">Descripción</string>
     <string name="bienvenido">Bienvenid@</string>
     <string name="ultimos_registrados">Últimos productos registrados</string>
+
+    <!--DETALLE ARTÍCULO-->
+    <string name="detalle_articulo">Detalle artículo</string>
+    <string name="nombre_detalle">Nombre:</string>
+    <string name="categoriaDetalle">Categoría:</string>
+    <string name="descripcionDetalle">Descripción:</string>
+    <string name="precio_detalle">Precio:</string>
+    <string name="stock_detalle">Stock:</string>
+    <string name="origenDetalle">Origen:</string>
+    <string name="id_detalle">ID:</string>
 </resources>
