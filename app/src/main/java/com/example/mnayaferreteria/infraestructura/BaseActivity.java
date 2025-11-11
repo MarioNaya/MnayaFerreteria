@@ -21,22 +21,46 @@ public class BaseActivity extends AppCompatActivity {
         int idItem = item.getItemId();
 
         if (idItem == R.id.subitemHerramientas) {
-            // Código para herramientas
+
             return true;
         } else if (idItem == R.id.subitemTodos) {
-            // Código para menaje
+
             return true;
         }  else if (idItem == R.id.subitemMenaje) {
-            // Código para menaje
+
             return true;
         } else if (idItem == R.id.subitemIluminacion) {
-            // Código para iluminación
+
             return true;
         } else if (idItem == R.id.subitemJardin) {
-            // Código para jardín
+
             return true;
         } else if (idItem == R.id.itemCuenta) {
-            // Código para cuenta
+
+            return true;
+        } else if (idItem == R.id.subitemTodosAdmin) {
+
+            return true;
+        } else if (idItem == R.id.subitemHerramientasAdmin) {
+
+            return true;
+        } else if (idItem == R.id.subitemMenajeAdmin) {
+
+            return true;
+        } else if (idItem == R.id.subitemIluminacionAdmin) {
+
+            return true;
+        } else if (idItem == R.id.subitemJardinAdmin) {
+
+            return true;
+        } else if (idItem == R.id.itemAdminRegistroArticulo) {
+
+            return true;
+        } else if (idItem == R.id.itemAdminUsuarios) {
+
+            return true;
+        } else if (idItem == R.id.itemAdminRegistroUsuario) {
+
             return true;
         } else if (idItem == R.id.itemCerrarSesion) {
             getSession().cerrarSesion();

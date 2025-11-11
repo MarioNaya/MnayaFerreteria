@@ -1,23 +1,35 @@
 <resources>
     <string name="app_name">MnayaFerreteria</string>
+
+    <!--LOGIN-->
     <string name="usuario">Usuario</string>
     <string name="password">Contraseña</string>
     <string name="acceder">Acceder</string>
+
+    <!--MENUS-->
     <string name="articulos">Artículos</string>
+    <string name="articulosAdmin">Administrar artículos</string>
+    <string name="registroArticulo">Registrar artículos</string>
     <string name="todos">Todos</string>
     <string name="cuenta">Administrar cuenta</string>
+    <string name="usuariosAdmin">Administrar usuarios</string>
+    <string name="registroUsuario">Registrar usuarios</string>
     <string name="herramientas">Herramientas</string>
     <string name="jardin">Jardín</string>
     <string name="menaje">Menaje</string>
     <string name="iluminacion">Iluminación</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
+
+    <!--AVISOS-->
     <string name="datos_acceso_title">Datos de acceso</string>
     <string name="datos_acceso_mensaje">Usuario o contraseña incorrectos</string>
     <string name="campo_obligatorio_title">Campo obligatorio</string>
-    <string name="ultimos_registrados">Últimos productos registrados</string>
     <string name="error_logado_title">Error en el logado</string>
     <string name="error_logado_mensaje">No se ha recibido información de los permisos de la cuenta</string>
+
+    <!--PRINCIPAL-->
     <string name="categoria">Categoría</string>
     <string name="descripcion">Descripción</string>
     <string name="bienvenido">Bienvenid@</string>
+    <string name="ultimos_registrados">Últimos productos registrados</string>
 </resources>

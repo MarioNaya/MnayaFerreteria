@@ -2,6 +2,40 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Item" />
-    <item android:title="Item" />
+    <item
+        android:id="@+id/itemAdminArticulos"
+        android:title="@string/articulosAdmin">
+        <menu>
+            <item
+                android:id="@+id/subitemTodosAdmin"
+                android:title="@string/todos" />
+            <item
+                android:id="@+id/subitemHerramientasAdmin"
+                android:title="@string/herramientas" />
+            <item
+                android:id="@+id/subitemJardinAdmin"
+                android:title="@string/jardin" />
+            <item
+                android:id="@+id/subitemMenajeAdmin"
+                android:title="@string/menaje" />
+            <item
+                android:id="@+id/subitemIluminacionAdmin"
+                android:title="@string/iluminacion" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/itemAdminRegistroArticulo"
+        android:title="@string/registroArticulo" />
+    <item
+        android:id="@+id/itemAdminUsuarios"
+        android:title="@string/usuariosAdmin" />
+    <item
+        android:id="@+id/itemAdminRegistroUsuario"
+        android:title="@string/registroUsuario" />
+    <item
+        android:id="@+id/itemCuenta"
+        android:title="@string/cuenta" />
+    <item
+        android:id="@+id/itemCerrarSesion"
+        android:title="@string/cerrar_sesion" />
 </menu>
