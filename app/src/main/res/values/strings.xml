@@ -17,4 +17,7 @@
     <string name="ultimos_registrados">Últimos productos registrados</string>
     <string name="error_logado_title">Error en el logado</string>
     <string name="error_logado_mensaje">No se ha recibido información de los permisos de la cuenta</string>
+    <string name="categoria">Categoría</string>
+    <string name="descripcion">Descripción</string>
+    <string name="bienvenido">Bienvenid@</string>
 </resources>

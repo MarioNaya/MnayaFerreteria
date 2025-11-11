@@ -1,27 +1,32 @@
-package com.example.mnayaferreteria;
+package com.example.mnayaferreteria.activities;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.mnayaferreteria.model.Articulo;
+import com.example.mnayaferreteria.infraestructura.BaseActivity;
+import com.example.mnayaferreteria.bbdd.Consultas;
+import com.example.mnayaferreteria.R;
+import com.example.mnayaferreteria.user.SessionManager;
+
 import java.util.ArrayList;
 
-public class Principal extends AppCompatActivity {
+public class Principal extends BaseActivity {
 
+    SessionManager sessionManager;
     ArrayList<Articulo> listaArticulos;
+    String nombre;
     String tipoUsuario;
+    AdapterUltimos adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,20 +41,27 @@ public class Principal extends AppCompatActivity {
 
         setSupportActionBar(findViewById(R.id.toolbarPrincipal));
 
+        nombre = getSession().getNombre();
+        tipoUsuario = getSession().getTipo();
+
         Bundle bundle = getIntent().getExtras();
 
         TextView bienvenida = findViewById(R.id.textSaludo);
         LinearLayout layout = findViewById(R.id.layoutLista);
         ListView lista = findViewById(R.id.listaPrincipal);
 
+        bienvenida.setText(String.format("Hola, %s",nombre));
 
-        if (bundle != null){
-            tipoUsuario = bundle.getString("tipo");
-        } else {
-            String titulo = getString(R.string.error_logado_title);
-            String mensaje = getString(R.string.error_logado_mensaje);
-            Avisos.avisoSinBotones(Principal.this,titulo,mensaje);
+        try (Consultas consulta = new Consultas(Principal.this)) {
+
+            listaArticulos = consulta.ultimosArticulosRegistrados();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
+
+        adapter = new AdapterUltimos(Principal.this,listaArticulos);
+        lista.setAdapter(adapter);
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu){

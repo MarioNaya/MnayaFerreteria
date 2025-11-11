@@ -8,7 +8,7 @@
 
         <menu>
             <item
-                android:id="@+id/todos"
+                android:id="@+id/subitemTodos"
                 android:title="@string/todos" />
             <item
                 android:id="@+id/subitemHerramientas"

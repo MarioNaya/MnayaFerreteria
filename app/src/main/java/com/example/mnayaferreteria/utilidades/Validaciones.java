@@ -1,11 +1,10 @@
-package com.example.mnayaferreteria;
+package com.example.mnayaferreteria.utilidades;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class Validaciones {
 

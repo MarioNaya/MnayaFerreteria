@@ -1,4 +1,4 @@
-package com.example.mnayaferreteria;
+package com.example.mnayaferreteria.utilidades;
 
 import android.view.View;
 import android.widget.EditText;

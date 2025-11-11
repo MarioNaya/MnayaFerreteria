@@ -1,4 +1,4 @@
-package com.example.mnayaferreteria;
+package com.example.mnayaferreteria.model;
 
 public class Articulo {
 

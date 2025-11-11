@@ -1,9 +1,8 @@
-package com.example.mnayaferreteria;
+package com.example.mnayaferreteria.bbdd;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.os.Build;
 
 import androidx.annotation.Nullable;
 
@@ -48,8 +47,8 @@ public class DbHelper extends SQLiteOpenHelper {
             "('Manguera de riego 25m', 'jardín', 'Manguera extensible con conector rápido y pistola de riego multifunción', 28.50, 45, 'internacional'), " +
             "('Tijeras de podar profesionales', 'jardín', 'Tijeras con hoja de acero inoxidable y mango ergonómico antideslizante', 22.90, 55, 'nacional'), " +
             "('Cortacésped eléctrico 1200W', 'jardín', 'Cortacésped con ancho de corte 32cm y cesto recolector de 30L', 125.00, 12, 'internacional'), " +
-            "('Martillo de carpintero', 'herramientas', 'Martillo profesional con mango de madera reforzado, cabeza de acero templado', 15.99, 45, 'nacional'),\n" +
-            "('Destornillador de precisión set 6 piezas', 'herramientas', 'Juego de destornilladores de precisión con puntas intercambiables y mango ergonómico', 12.50, 60, 'internacional'),\n" +
+            "('Martillo de carpintero', 'herramientas', 'Martillo profesional con mango de madera reforzado, cabeza de acero templado', 15.99, 45, 'nacional')," +
+            "('Destornillador de precisión set 6 piezas', 'herramientas', 'Juego de destornilladores de precisión con puntas intercambiables y mango ergonómico', 12.50, 60, 'internacional')," +
             "('Taladro eléctrico 650W', 'herramientas', 'Taladro percutor con regulador de velocidad y maletín de transporte', 89.99, 25, 'internacional'), " +
             "('Cubo de zinc galvanizado 12L', 'menaje', 'Cubo resistente de zinc con asa reforzada, ideal para limpieza', 16.50, 40, 'nacional'), " +
             "('Escoba de cerdas duras', 'menaje', 'Escoba con cerdas sintéticas resistentes y mango de madera de 130cm', 9.99, 70, 'nacional'), " +
@@ -68,7 +67,7 @@ public class DbHelper extends SQLiteOpenHelper {
             "('Cinta métrica 5m', 'herramientas', 'Flexómetro con cinta de acero y freno automático', 8.99, 80, 'internacional'), " +
             "('Juego de llaves Allen', 'herramientas', 'Set de 9 llaves Allen métricas de 1.5mm a 10mm', 11.50, 65, 'internacional'), " +
             "('Tabla de planchar reforzada', 'menaje', 'Tabla con estructura metálica, altura regulable y funda acolchada', 42.50, 15, 'internacional'), " +
-            "('Downlight empotrable LED 12W', 'iluminación', 'Foco empotrable extraplano con driver incluido, luz cálida', 14.75, 85, 'nacional'), s" +
+            "('Downlight empotrable LED 12W', 'iluminación', 'Foco empotrable extraplano con driver incluido, luz cálida', 14.75, 85, 'nacional'), " +
             "('Lámpara de mesa escritorio LED', 'iluminación', 'Flexo LED regulable con brazo articulado y puerto USB de carga', 36.50, 35, 'internacional'), " +
             "('Bombilla inteligente WiFi E27', 'iluminación', 'Bombilla LED controlable por app, compatible con Alexa y Google', 18.90, 70, 'internacional'), " +
             "('Baliza solar jardín pack 6', 'iluminación', 'Luces solares para caminos con estaca, encendido automático', 29.99, 45, 'internacional'), " +
