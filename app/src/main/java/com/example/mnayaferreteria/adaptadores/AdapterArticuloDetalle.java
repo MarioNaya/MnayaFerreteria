@@ -5,10 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mnayaferreteria.R;
 import com.example.mnayaferreteria.model.Articulo;
+
+import java.util.Objects;
 
 public class AdapterArticuloDetalle extends BaseAdapter {
 
@@ -42,7 +45,6 @@ public class AdapterArticuloDetalle extends BaseAdapter {
 
         View vista = view;
 
-        // Solo inflar si la vista no existe (reutilización de vistas)
         if (vista == null) {
             vista = inflater.inflate(R.layout.adapter_detalle_articulo, viewGroup, false);
         }
@@ -54,16 +56,27 @@ public class AdapterArticuloDetalle extends BaseAdapter {
         TextView pre = vista.findViewById(R.id.textDetallePrecio);
         TextView sto = vista.findViewById(R.id.textDetalleStock);
         TextView ori = vista.findViewById(R.id.textDetalleOrigen);
+        ImageView img = vista.findViewById(R.id.imageArticuloDetalle);
 
-        // Verificar que el artículo no sea null
+
         if (articulo != null) {
-            idArt.setText(articulo.getIdArticulo());
+            idArt.setText(String.valueOf(articulo.getIdArticulo()));
             nom.setText(articulo.getNombre());
             cat.setText(articulo.getCategoria());
             des.setText(articulo.getDescripcion());
             pre.setText(String.valueOf(articulo.getPrecio()));
             sto.setText(String.valueOf(articulo.getStock()));
             ori.setText(articulo.getOrigen());
+        }
+
+        if (Objects.equals(articulo.getCategoria(),"herramientas")){
+            img.setImageResource(R.drawable.herramientaslogo);
+        } else if (Objects.equals(articulo.getCategoria(),"iluminación")){
+            img.setImageResource(R.drawable.iluminacionlogo);
+        } else if (Objects.equals(articulo.getCategoria(),"jardín")){
+            img.setImageResource(R.drawable.jardinlogo);
+        } else if (Objects.equals(articulo.getCategoria(),"menaje")){
+            img.setImageResource(R.drawable.menajelogo);
         }
 
         return vista;

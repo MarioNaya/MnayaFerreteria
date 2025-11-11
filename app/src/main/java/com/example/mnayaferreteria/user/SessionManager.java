@@ -8,6 +8,7 @@ public class SessionManager {
     private static final String PREF_NAME = "UserSession";
     private static final String KEY_NOMBRE = "nombre";
     private static final String KEY_TIPO = "tipo";
+    private static final String KEY_CATEGORIA = "ultima_categoria";
 
     private static SessionManager instance;
     private final SharedPreferences prefs;
@@ -41,6 +42,15 @@ public class SessionManager {
 
     public boolean haySesionActiva(){
         return !prefs.getString(KEY_NOMBRE,"").isEmpty();
+    }
+
+    public void guardarCategoria(String categoria){
+        editor.putString(KEY_CATEGORIA, categoria);
+        editor.apply();
+    }
+
+    public String getCategoria(){
+        return prefs.getString(KEY_CATEGORIA, null);
     }
 
     public void cerrarSesion(){

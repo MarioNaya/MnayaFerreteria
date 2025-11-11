@@ -13,7 +13,8 @@
         android:theme="@style/Theme.MnayaFerreteria">
         <activity
             android:name=".activities.ArticuloDetalle"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".activities.ArticulosVista" />
         <activity
             android:name=".activities.ArticulosVista"
             android:exported="false"

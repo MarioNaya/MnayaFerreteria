@@ -19,20 +19,22 @@
         <ImageView
             android:id="@+id/imageArticuloDetalle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
+            android:scaleType="centerInside"
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="15dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
                 android:layout_weight="1"
                 android:text="@string/id_detalle"
                 android:textAlignment="center"
@@ -41,17 +43,23 @@
 
             <TextView
                 android:id="@+id/textDetalleId"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:ellipsize="none"
+                android:inputType="text|textMultiLine"
+                android:scrollHorizontally="false"
+                android:singleLine="false"
                 android:text="TextView"
+                android:textAlignment="textStart"
                 android:textColor="#FFFFFFFF" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:orientation="horizontal">
 
             <TextView
@@ -67,17 +75,23 @@
 
             <TextView
                 android:id="@+id/textDetalleNombre"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:ellipsize="none"
+                android:inputType="text|textMultiLine"
+                android:scrollHorizontally="false"
+                android:singleLine="false"
                 android:text="TextView"
+                android:textAlignment="textStart"
                 android:textColor="#FFFFFFFF" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:orientation="horizontal">
 
             <TextView
@@ -93,17 +107,23 @@
 
             <TextView
                 android:id="@+id/textDetalleCategoria"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:ellipsize="none"
+                android:inputType="text|textMultiLine"
+                android:scrollHorizontally="false"
+                android:singleLine="false"
                 android:text="TextView"
+                android:textAlignment="textStart"
                 android:textColor="#FFFFFFFF" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:orientation="horizontal">
 
             <TextView
@@ -119,17 +139,23 @@
 
             <TextView
                 android:id="@+id/textDetallePrecio"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:ellipsize="none"
+                android:inputType="text|textMultiLine"
+                android:scrollHorizontally="false"
+                android:singleLine="false"
                 android:text="TextView"
+                android:textAlignment="textStart"
                 android:textColor="#FFFFFFFF" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:orientation="horizontal">
 
             <TextView
@@ -145,17 +171,23 @@
 
             <TextView
                 android:id="@+id/textDetalleStock"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:ellipsize="none"
+                android:inputType="text|textMultiLine"
+                android:scrollHorizontally="false"
+                android:singleLine="false"
                 android:text="TextView"
+                android:textAlignment="textStart"
                 android:textColor="#FFFFFFFF" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:orientation="horizontal">
 
             <TextView
@@ -171,17 +203,23 @@
 
             <TextView
                 android:id="@+id/textDetalleOrigen"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:ellipsize="none"
+                android:inputType="text|textMultiLine"
+                android:scrollHorizontally="false"
+                android:singleLine="false"
                 android:text="TextView"
+                android:textAlignment="textStart"
                 android:textColor="#FFFFFFFF" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:orientation="horizontal">
 
             <TextView
@@ -197,11 +235,16 @@
 
             <TextView
                 android:id="@+id/textDetalleDescripcion"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:ellipsize="none"
+                android:inputType="text|textMultiLine"
+                android:scrollHorizontally="false"
+                android:singleLine="false"
                 android:text="TextView"
+                android:textAlignment="textStart"
                 android:textColor="#FFFFFFFF" />
         </LinearLayout>
 

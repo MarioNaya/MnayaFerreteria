@@ -1,5 +1,6 @@
 package com.example.mnayaferreteria.bbdd;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -116,5 +117,35 @@ public class Consultas extends DbHelper {
         cursor.close();
         db.close();
         return articulo;
+    }
+
+    public boolean actualizarArticulo(Articulo articulo){
+        SQLiteDatabase db = this.getWritableDatabase();
+        boolean actualizacionCorrecta = false;
+
+        try {
+            ContentValues values = new ContentValues();
+
+            values.put("nombre",articulo.getNombre());
+            values.put("categoria",articulo.getCategoria());
+            values.put("descripcion",articulo.getDescripcion());
+            values.put("precio",articulo.getPrecio());
+            values.put("stock",articulo.getStock());
+            values.put("origen",articulo.getOrigen());
+
+            int filas = db.update(
+                    TABLA_ARTICULOS,
+                    values,
+                    "idArticulo = ?",
+                    new String[]{String.valueOf(articulo.getIdArticulo())}
+            );
+
+            actualizacionCorrecta = (filas > 0);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            db.close();
+        }
+        return actualizacionCorrecta;
     }
 }

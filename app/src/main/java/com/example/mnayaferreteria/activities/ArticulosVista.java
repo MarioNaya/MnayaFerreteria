@@ -48,6 +48,15 @@ public class ArticulosVista extends BaseActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         categoria = getIntent().getStringExtra("categoria");
+        if (categoria == null) {
+            categoria = getSession().getCategoria();
+        }
+        if (categoria == null) {
+            finish();
+            return;
+        }
+        getSession().guardarCategoria(categoria);
+
         lista = findViewById(R.id.listaLayoutArticulos);
         tipoUsuario = getSession().getTipo();
 
@@ -73,6 +82,7 @@ public class ArticulosVista extends BaseActivity {
             }
         });
     }
+
 
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
