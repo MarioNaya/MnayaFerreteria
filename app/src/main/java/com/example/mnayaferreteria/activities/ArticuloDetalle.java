@@ -140,6 +140,11 @@ public class ArticuloDetalle extends BaseActivity {
                         return;
                     }
 
+                    if (stock.isEmpty()) {
+                        editStock.setError("El stock no puede estar vacío");
+                        return;
+                    }
+
                     int stockValue = Integer.parseInt(stock);
                     if (stockValue <= 0) {
                         editPrecio.setError("El stock debe ser mayor o igual a 0");
