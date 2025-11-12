@@ -169,7 +169,4 @@ public class Consultas extends DbHelper {
         return articuloEliminado;
     }
 
-    public boolean insertarArticulo(Articulo articulo){
-
-    }
 }
