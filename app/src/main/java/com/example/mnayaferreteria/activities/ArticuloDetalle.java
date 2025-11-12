@@ -180,12 +180,40 @@ public class ArticuloDetalle extends BaseActivity {
                             Toast.makeText(ArticuloDetalle.this,"Registro actualizado correctamente",Toast.LENGTH_LONG).show();
                         }
                     } catch (Exception e) {
-                        Toast.makeText(ArticuloDetalle.this, "Error al guardar en BD", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ArticuloDetalle.this, "Error al guardar en BD", Toast.LENGTH_LONG).show();
                     }
 
                     adapter.notifyDataSetChanged();
 
                     dialog.dismiss();
+                });
+            }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder aviso = new AlertDialog.Builder(ArticuloDetalle.this);
+                aviso.setTitle(getString(R.string.eliminar_articulo_title));
+                aviso.setMessage(getString(R.string.eliminar_articulo_message));
+                aviso.setPositiveButton("Eliminar", null);
+                aviso.setNegativeButton("Cancelar", null);
+                AlertDialog dialog = aviso.create();
+                dialog.show();
+
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(vi -> {
+                    try {
+                        Consultas consulta = new Consultas(ArticuloDetalle.this);
+                        if (consulta.eliminarArticulo(String.valueOf(articulo.getIdArticulo()))){
+                            Toast.makeText(ArticuloDetalle.this, getString(R.string.eliminar_articulo_confirmado),Toast.LENGTH_LONG).show();
+                            consulta.close();
+                            dialog.dismiss();
+                            finish();
+                        }
+                    } catch (Exception e){
+                        Toast.makeText(ArticuloDetalle.this, getString(R.string.eliminar_articulo_error),Toast.LENGTH_LONG).show();
+                    }
                 });
             }
         });

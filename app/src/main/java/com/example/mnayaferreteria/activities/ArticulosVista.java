@@ -22,6 +22,7 @@ import com.example.mnayaferreteria.infraestructura.BaseActivity;
 import com.example.mnayaferreteria.model.Articulo;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ArticulosVista extends BaseActivity {
 
@@ -47,6 +48,7 @@ public class ArticulosVista extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
+
         categoria = getIntent().getStringExtra("categoria");
         if (categoria == null) {
             categoria = getSession().getCategoria();
@@ -55,7 +57,9 @@ public class ArticulosVista extends BaseActivity {
             finish();
             return;
         }
+
         getSession().guardarCategoria(categoria);
+        setTitleToolbar(categoria);
 
         lista = findViewById(R.id.listaLayoutArticulos);
         tipoUsuario = getSession().getTipo();
@@ -95,4 +99,46 @@ public class ArticulosVista extends BaseActivity {
 
         return true;
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (adapter != null && listaArticulos != null && categoria != null) {
+            actualizarLista();
+        }
+    }
+
+    private void actualizarLista() {
+        try (Consultas consulta = new Consultas(ArticulosVista.this)) {
+            listaArticulos.clear();
+            listaArticulos.addAll(consulta.listadoArticulos(categoria));
+            adapter.notifyDataSetChanged();
+        } catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void setTitleToolbar(String categoria){
+        if(categoria != null){
+            switch (categoria) {
+                case "herramientas":
+                    Objects.requireNonNull(getSupportActionBar()).setTitle("Herramientas");
+                    break;
+                case "menaje":
+                    Objects.requireNonNull(getSupportActionBar()).setTitle("Menaje");
+                    break;
+                case "jardín":
+                    Objects.requireNonNull(getSupportActionBar()).setTitle("Jardín");
+                    break;
+                case "iluminación":
+                    Objects.requireNonNull(getSupportActionBar()).setTitle("Iluminación");
+                    break;
+                default:
+                    Objects.requireNonNull(getSupportActionBar()).setTitle("Artículos");
+                    break;
+            }
+        }
+
+    }
+
 }

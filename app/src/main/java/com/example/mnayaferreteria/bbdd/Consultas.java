@@ -148,4 +148,24 @@ public class Consultas extends DbHelper {
         }
         return actualizacionCorrecta;
     }
+
+    public boolean eliminarArticulo(String id){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        boolean articuloEliminado = false;
+
+        try {
+            int filas = db.delete(
+                    TABLA_ARTICULOS,
+                    "idArticulo = ?",
+                    new String[]{id});
+
+            articuloEliminado = (filas > 0);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            db.close();
+        }
+        return articuloEliminado;
+    }
 }

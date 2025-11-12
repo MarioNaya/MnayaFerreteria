@@ -26,6 +26,10 @@
     <string name="campo_obligatorio_title">Campo obligatorio</string>
     <string name="error_logado_title">Error en el logado</string>
     <string name="error_logado_mensaje">No se ha recibido información de los permisos de la cuenta</string>
+    <string name="eliminar_articulo_title">Eliminación de artículo</string>
+    <string name="eliminar_articulo_message">¿Está seguro de que desea eliminar el artículo seleccionado?</string>
+    <string name="eliminar_articulo_confirmado">Se ha eliminado el artículo correctamente</string>
+    <string name="eliminar_articulo_error">Ha habido un error. No se ha completado la eliminación del artículo.</string>
 
     <!--PRINCIPAL-->
     <string name="categoria">Categoría</string>
