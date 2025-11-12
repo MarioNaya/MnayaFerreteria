@@ -94,7 +94,7 @@ public class ArticuloDetalle extends BaseActivity {
                 adapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinnerCategoria.setAdapter(adapterSpinner);
 
-                editId.setText(String.valueOf(articulo.getIdArticulo()));  // ID no editable
+                editId.setText(String.valueOf(articulo.getIdArticulo()));
                 editNombre.setText(articulo.getNombre());
                 editPrecio.setText(String.valueOf(articulo.getPrecio()));
                 editDescripcion.setText(articulo.getDescripcion());
