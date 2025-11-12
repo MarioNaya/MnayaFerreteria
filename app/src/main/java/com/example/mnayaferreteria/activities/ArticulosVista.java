@@ -119,23 +119,17 @@ public class ArticulosVista extends BaseActivity {
     }
 
     private void setTitleToolbar(String categoria){
-        if(categoria != null){
-            switch (categoria) {
-                case "herramientas":
-                    Objects.requireNonNull(getSupportActionBar()).setTitle("Herramientas");
-                    break;
-                case "menaje":
-                    Objects.requireNonNull(getSupportActionBar()).setTitle("Menaje");
-                    break;
-                case "jardín":
-                    Objects.requireNonNull(getSupportActionBar()).setTitle("Jardín");
-                    break;
-                case "iluminación":
-                    Objects.requireNonNull(getSupportActionBar()).setTitle("Iluminación");
-                    break;
-                default:
-                    Objects.requireNonNull(getSupportActionBar()).setTitle("Artículos");
-                    break;
+        if(categoria != null && getSupportActionBar() != null){
+            if(categoria.equals(" AND categoria='herramientas'")){
+                getSupportActionBar().setTitle("Herramientas");
+            } else if(categoria.equals(" AND categoria='menaje'")){
+                getSupportActionBar().setTitle("Menaje");
+            } else if(categoria.equals(" AND categoria='jardín'")){
+                getSupportActionBar().setTitle("Jardín");
+            } else if(categoria.equals(" AND categoria='iluminación'")){
+                getSupportActionBar().setTitle("Iluminación");
+            } else {
+                getSupportActionBar().setTitle("Artículos");
             }
         }
 
