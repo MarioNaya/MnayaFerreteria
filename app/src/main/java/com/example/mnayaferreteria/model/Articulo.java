@@ -19,6 +19,15 @@ public class Articulo {
         this.idArticulo = idArticulo;
     }
 
+    public Articulo(String nombre, String categoria, String descripcion, double precio, int stock, String origen) {
+        this.nombre = nombre;
+        this.categoria = categoria;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.stock = stock;
+        Origen = origen;
+    }
+
     public Articulo(String nombre, String categoria, String descripcion) {
         this.nombre = nombre;
         this.categoria = categoria;

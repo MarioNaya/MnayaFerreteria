@@ -46,4 +46,23 @@
     <string name="stock_detalle">Stock:</string>
     <string name="origenDetalle">Origen:</string>
     <string name="id_detalle">ID:</string>
+    <string name="nacional">Nacional</string>
+    <string name="internacional">Internacional</string>
+
+    <!--REGISTRO ARTICULO-->
+    <string name="reg_art_toolbar_title">Registrar artículo</string>
+    <string name="nombre">Nombre</string>
+    <string name="precio">Precio</string>
+    <string name="stock">Stock</string>
+    <string name="origen">Origen</string>
+    <string name="registrar">Registrar</string>
+
+    <!--SPINNER CATEGORÍA-->
+    <string-array name="categorias">
+        <item name="seleccioneSpin">Seleccione</item>
+        <item name="herramientasSpin">Herramientas</item>
+        <item name="menajeSpin">Menaje</item>
+        <item name="iluminacionSpin">Iluminación</item>
+        <item name="jardinSpin">Jardín</item>
+    </string-array>
 </resources>

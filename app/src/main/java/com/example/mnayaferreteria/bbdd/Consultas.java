@@ -169,4 +169,33 @@ public class Consultas extends DbHelper {
         return articuloEliminado;
     }
 
+    public boolean registrarArticulo(Articulo articulo){
+        SQLiteDatabase db = this.getWritableDatabase();
+        boolean articuloRegistrado = false;
+
+        ContentValues values = new ContentValues();
+        values.put("nombre",articulo.getNombre());
+        values.put("categoria",articulo.getCategoria());
+        values.put("descripcion",articulo.getDescripcion());
+        values.put("origen",articulo.getOrigen());
+        values.put("precio",String.valueOf(articulo.getPrecio()));
+        values.put("nombre",String.valueOf(articulo.getStock()));
+
+        try{
+            int filas = Math.toIntExact(db.insert(
+                    TABLA_ARTICULOS,
+                    null,
+                    values
+            ));
+            articuloRegistrado = (filas >0);
+
+        } catch (Exception e){
+            throw new RuntimeException(e);
+        } finally {
+            if (db != null){
+                db.close();
+            }
+        }
+        return articuloRegistrado;
+    }
 }
