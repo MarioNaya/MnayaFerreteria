@@ -60,16 +60,27 @@ public class RegistroArticulo extends BaseActivity {
         RadioButton radInt = findViewById(R.id.radioInterReg);
         Button reg = findViewById(R.id.btnRegArt);
 
-        ArrayAdapter<CharSequence> adapterSpinner = ArrayAdapter.createFromResource(this,
+        // Configurar el Spinner con layouts personalizados
+        ArrayAdapter<CharSequence> adapterSpinner = ArrayAdapter.createFromResource(
+                this,
                 R.array.categorias,
-                android.R.layout.simple_spinner_item);
-        adapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_item);
+                R.layout.spinner_item  // Layout personalizado para el item seleccionado
+        );
+        adapterSpinner.setDropDownViewResource(R.layout.spinner_dropdown_item);  // Layout para el dropdown
         cat.setAdapter(adapterSpinner);
+
+        // Para que se despliegue desde abajo
+        cat.post(new Runnable() {
+            @Override
+            public void run() {
+                cat.setDropDownVerticalOffset(cat.getHeight());
+            }
+        });
 
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Validaciones.comruebaCamposVacios(layout, RegistroArticulo.this)) {
+                if (!Validaciones.comruebaCamposVacios(layout, RegistroArticulo.this)) {
                     return;
                 }
 
@@ -78,7 +89,7 @@ public class RegistroArticulo extends BaseActivity {
                     return;
                 }
 
-                if (Validaciones.validarEnteroPositivo(sto, RegistroArticulo.this)) {
+                if (!Validaciones.validarEnteroPositivo(sto, RegistroArticulo.this)) {
                     sto.setText("");
                     return;
                 }
@@ -110,14 +121,17 @@ public class RegistroArticulo extends BaseActivity {
                 builder.setNegativeButton("Cancelar", null);
 
                 AlertDialog dialog = builder.create();
-
+                dialog.show();
 
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v ->{
-                    dialog.show();
+
                     try {
                         Consultas consulta = new Consultas(RegistroArticulo.this);
                         if (consulta.registrarArticulo(articulo)){
                             Toast.makeText(RegistroArticulo.this,"Registro realizado correctamente",Toast.LENGTH_LONG).show();
+                            dialog.dismiss();
+                            Utilidades.limpiaCampos(layout);
+                            gruRad.clearCheck();
                         }
                     } catch (Exception e) {
                         Toast.makeText(RegistroArticulo.this,"Error en el registro. Vuelva a intentarlo.",Toast.LENGTH_LONG).show();

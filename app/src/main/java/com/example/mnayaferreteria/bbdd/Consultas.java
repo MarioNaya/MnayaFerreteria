@@ -179,7 +179,7 @@ public class Consultas extends DbHelper {
         values.put("descripcion",articulo.getDescripcion());
         values.put("origen",articulo.getOrigen());
         values.put("precio",String.valueOf(articulo.getPrecio()));
-        values.put("nombre",String.valueOf(articulo.getStock()));
+        values.put("stock",String.valueOf(articulo.getStock()));
 
         try{
             int filas = Math.toIntExact(db.insert(

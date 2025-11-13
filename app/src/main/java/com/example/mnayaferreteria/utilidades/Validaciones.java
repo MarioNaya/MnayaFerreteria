@@ -42,13 +42,13 @@ public class Validaciones {
             }
 
             editText.setError(null);
+            return true;
 
         } catch (NumberFormatException e) {
             editText.setError("Debe ingresar un número entero válido");
             editText.requestFocus();
             return false;
         }
-        return true;
     }
 
     public static boolean validarDoublePositivo(EditText editText, Context context) {
@@ -64,12 +64,12 @@ public class Validaciones {
             }
 
             editText.setError(null);
+            return true;
 
         } catch (NumberFormatException e) {
             editText.setError("Debe ingresar un número decimal válido");
             editText.requestFocus();
             return false;
         }
-        return true;
     }
 }

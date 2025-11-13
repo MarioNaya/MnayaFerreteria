@@ -70,8 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:background="@drawable/spinner_con_flecha"
-            android:dropDownSelector="@android:color/transparent"
-            android:foregroundTint="@color/black"
+            android:dropDownSelector="@drawable/dropdown_selector"
             android:paddingStart="12dp"
             android:paddingEnd="40dp"
             android:popupBackground="@android:color/white"
@@ -160,28 +159,22 @@
             android:id="@+id/groupRadioOrigenReg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="horizontal"
             android:tag="@string/origen">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/radioNacionalReg"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nacional"
+                android:textColor="#C9F2F2" />
 
-                <RadioButton
-                    android:id="@+id/radioNacionalReg"
-                    android:layout_width="175dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nacional"
-                    android:textColor="#C9F2F2" />
-
-                <RadioButton
-                    android:id="@+id/radioInterReg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/internacional"
-                    android:textColor="#C9F2F2" />
-            </LinearLayout>
-
+            <RadioButton
+                android:id="@+id/radioInterReg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/internacional"
+                android:textColor="#C9F2F2" />
         </RadioGroup>
 
     </LinearLayout>

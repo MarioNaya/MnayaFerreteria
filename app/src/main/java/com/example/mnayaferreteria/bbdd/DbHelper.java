@@ -29,7 +29,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     String crea_tabla_articulos = "CREATE TABLE " + TABLA_ARTICULOS +
             " (idArticulo INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "nombre TEXT NOT NULL, " +
+            "nombre TEXT UNIQUE NOT NULL, " +
             "categoria TEXT NOT NULL, " +
             "descripcion TEXT NOT NULL, " +
             "precio NUMERIC NOT NULL, " +
