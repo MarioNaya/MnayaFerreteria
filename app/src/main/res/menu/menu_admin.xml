@@ -33,9 +33,6 @@
         android:id="@+id/itemAdminRegistroUsuario"
         android:title="@string/registroUsuario" />
     <item
-        android:id="@+id/itemCuenta"
-        android:title="@string/cuenta" />
-    <item
         android:id="@+id/itemCerrarSesion"
         android:title="@string/cerrar_sesion" />
 </menu>

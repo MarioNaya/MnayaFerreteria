@@ -65,4 +65,27 @@
         <item name="iluminacionSpin">Iluminación</item>
         <item name="jardinSpin">Jardín</item>
     </string-array>
+
+    <!--SPINNER CATEGORÍA-->
+    <string-array name="tipos">
+        <item name="seleccioneSpin">Seleccione</item>
+        <item name="Admin">Admin</item>
+        <item name="User">Usuario</item>
+    </string-array>
+
+    <!--USUARIO DETALLE-->
+    <string name="nomDet">Nombre:</string>
+    <string name="apeDet">Apellidos:</string>
+    <string name="edaDet">Edad:</string>
+    <string name="pasDet">Contraseña:</string>
+    <string name="tipDet">Tipo:</string>
+    <string name="detalle_usuario">Detalle usuario</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="edad">Edad</string>
+    <string name="tipo">Tipo</string>
+
+    <!-- REGISTRO USUARIO -->
+    <string name="reg_usuario_toolbar_title">Registrar usuario</string>
+    <string name="usuario_detalle">Usuario:</string>
+    <string name="password_detalle">Contraseña:</string>
 </resources>

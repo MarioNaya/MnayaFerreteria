@@ -12,6 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MnayaFerreteria">
         <activity
+            android:name=".activities.AdministrarCuenta"
+            android:exported="false"
+            android:parentActivityName=".activities.Principal"/>
+        <activity
+            android:name=".activities.RegistroUsuario"
+            android:exported="false"
+            android:parentActivityName=".activities.Principal"/>
+        <activity
+            android:name=".activities.UsuarioDetalle"
+            android:exported="false"
+            android:parentActivityName=".activities.AdministrarUsuarios" />
+        <activity
+            android:name=".activities.AdministrarUsuarios"
+            android:exported="false"
+            android:parentActivityName=".activities.Principal" />
+        <activity
             android:name=".activities.RegistroArticulo"
             android:exported="false"
             android:parentActivityName=".activities.Principal" />

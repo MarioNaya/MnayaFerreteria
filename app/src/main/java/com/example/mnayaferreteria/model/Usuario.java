@@ -15,6 +15,13 @@ public class Usuario {
         this.tipo = tipo;
     }
 
+    public Usuario(String usuario, String nombre, int edad, String tipo) {
+        this.usuario = usuario;
+        this.nombre = nombre;
+        this.edad = edad;
+        this.tipo = tipo;
+    }
+
     public Usuario(String nombre, String apellidos, String tipo) {
         this.nombre = nombre;
         this.apellidos = apellidos;

@@ -7,8 +7,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mnayaferreteria.R;
+import com.example.mnayaferreteria.activities.AdministrarUsuarios;
 import com.example.mnayaferreteria.activities.ArticulosVista;
 import com.example.mnayaferreteria.activities.RegistroArticulo;
+import com.example.mnayaferreteria.activities.RegistroUsuario;
 import com.example.mnayaferreteria.user.SessionManager;
 import com.example.mnayaferreteria.activities.MainActivity;
 
@@ -80,10 +82,12 @@ public class BaseActivity extends AppCompatActivity {
             startActivity(i);
             return true;
         } else if (idItem == R.id.itemAdminUsuarios) {
-
+            Intent i = new Intent(this, AdministrarUsuarios.class);
+            startActivity(i);
             return true;
         } else if (idItem == R.id.itemAdminRegistroUsuario) {
-
+            Intent i = new Intent(this, RegistroUsuario.class);
+            startActivity(i);
             return true;
         } else if (idItem == R.id.itemCerrarSesion) {
             getSession().cerrarSesion();

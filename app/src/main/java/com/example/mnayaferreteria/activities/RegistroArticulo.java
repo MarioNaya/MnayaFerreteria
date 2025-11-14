@@ -60,16 +60,14 @@ public class RegistroArticulo extends BaseActivity {
         RadioButton radInt = findViewById(R.id.radioInterReg);
         Button reg = findViewById(R.id.btnRegArt);
 
-        // Configurar el Spinner con layouts personalizados
         ArrayAdapter<CharSequence> adapterSpinner = ArrayAdapter.createFromResource(
                 this,
                 R.array.categorias,
-                R.layout.spinner_item  // Layout personalizado para el item seleccionado
+                R.layout.spinner_item
         );
         adapterSpinner.setDropDownViewResource(R.layout.spinner_dropdown_item);  // Layout para el dropdown
         cat.setAdapter(adapterSpinner);
 
-        // Para que se despliegue desde abajo
         cat.post(new Runnable() {
             @Override
             public void run() {
